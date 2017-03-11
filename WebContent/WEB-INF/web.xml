@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- En web.xml archivo es donde vamos a configurar el nombre del serlvlet,Este servlet, que se llama spring en nuestro caso -->
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://java.sun.com/xml/ns/javaee" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+  <display-name>contacto-manager</display-name>
+	<welcome-file-list>
+		<welcome-file>list.html</welcome-file>
+	</welcome-file-list>
+
+ 
+
+<!--  nombre del servlet spring este es el servidor principal responsable de manejar las peticiones de los servlets controladores-->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class><!--La clase que usa el servlet es:-->
+		<load-on-startup>1</load-on-startup>                                             <!--  DispatcherServlet-->
+	</servlet>
+ <!-- nombre del server spring -->
+ <servlet-mapping>
+	<servlet-name>spring</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+   
+</web-app>
+
+<!-- DispatcherServlet tambien ayuda a otro fichero xml llamado en este caso spring.servlets  a cargar los beams necesarios -->
